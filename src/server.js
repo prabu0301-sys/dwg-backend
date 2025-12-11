@@ -13,5 +13,9 @@ app.use("/api/convert", convertRoute);
 // Static hosting for GLB files
 app.use("/models", express.static(path.join(__dirname, "../public/models")));
 
-const PORT = 5000;
-app.listen(PORT, () => console.log("Server running on port", PORT));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
+
